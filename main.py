@@ -49,3 +49,4 @@ def protected_endpoint(access_token: str = Depends(token_generator.decode_token)
     # This endpoint is protected and requires a valid access token
     user_id = access_token['user_id']
     return {'message': f'Welcome, user {user_id}!'}
+
