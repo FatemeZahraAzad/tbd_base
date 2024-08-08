@@ -11,17 +11,20 @@ SECRET_KEY = "your_secret_key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
+
 def get_password_hash(password: str) -> str:
     """
     Generate a hashed password from a plain-text password.
     """
     return pwd_context.hash(password)
 
+
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """
     Verify if a plain-text password matches the hashed password.
     """
     return pwd_context.verify(plain_password, hashed_password)
+
 
 def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None) -> str:
     """
