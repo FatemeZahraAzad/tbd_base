@@ -24,3 +24,7 @@ def get_db():
         yield db
     finally:
         db_session.remove()
+
+
+class SessionLocal:
+    pass
